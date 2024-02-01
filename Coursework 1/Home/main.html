@@ -29,8 +29,8 @@
 
     <div class="wordmark-container">
         <img src="Porsche_inverted.png" alt="Porsche Wordmark" class="wordmark">
-        <div id="arrow" class="arrow">↓</div> <!-- Arrow icon -->
-    </div>
+        <div id="start-button" class="start-btn">START</div>
+    </div>    
     
     <div class="content">
 
@@ -53,22 +53,22 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // This part can remain the same if you want to start with the audio unmuted or at a specific volume
+            // This part can remain the same if you want to start with the audio at a specific volume
             var initialAudio = document.getElementById('background-audio');
             if(initialAudio) {
-                initialAudio.volume = 0.25; // Start with full volume or adjust as needed
+                initialAudio.volume = 0.25; // Start with a reduced volume or adjust as needed
             }
         
-            // Event listener for the down arrow click
-            document.getElementById('arrow').addEventListener('click', function() {
+            // Update the event listener to target the 'start-button' instead of 'arrow'
+            document.getElementById('start-button').addEventListener('click', function() {
                 // Hide the Porsche wordmark assuming it's the only element with class 'wordmark'
                 var porsche = document.querySelector('.wordmark'); // Select the wordmark using its class
                 if (porsche) {
                     porsche.style.display = 'none';
                 }
                 
-                // Hide the arrow itself
-                this.style.display = 'none';
+                // Since we're using the start button now, hide the container that might also contain the arrow
+                document.querySelector('.wordmark-container').style.display = 'none';
         
                 // Make the content block visible
                 var content = document.querySelector('.content');
@@ -79,12 +79,14 @@
                     content.style.opacity = 1;
                 }, 10); // Short timeout to ensure the display change has taken effect
                 
-                // Decrease the volume by 50% when the down arrow is clicked
+                // Adjust the volume or stop the audio as required when the start button is clicked
+                // Here, we're continuing to decrease the volume as per the original functionality
                 var audio = document.getElementById('background-audio');
-                audio.volume = 0.025; // Reduce volume to 50%
+                audio.volume = 0.025; // Example: Further reduce volume to 2.5%
             });
         });
         </script>
+        
     
 </body>
 </html>

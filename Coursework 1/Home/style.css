@@ -85,30 +85,6 @@
       margin-bottom: 20px;
       color: #CCC; /* Lighter text for less contrast */
   }
-  
-  @media screen and (max-width: 768px) {
-    nav ul li {
-      margin: 0 10px; /* Less margin on smaller screens */
-    }
-
-    .content {
-      width: 90%;
-      margin-top: 60px; /* Less margin on smaller screens */
-    }
-
-    .intro-text {
-      font-size: 16px;
-    }
-    }
-
-    .wordmark {
-        width: 30%;
-        height: 30%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 30px;
-    }
 
     @font-face {
         font-family: 'Porsche_Regular';

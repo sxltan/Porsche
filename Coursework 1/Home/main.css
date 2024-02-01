@@ -5,14 +5,6 @@
     /* Other styles remain unchanged */
 }
 
-.arrow {
-    cursor: pointer;
-    text-align: center;
-    font-size: 24px; /* Adjust size as needed */
-    color: #fff; /* Arrow color */
-    animation: bounce 2s infinite; /* Add a bounce animation to draw attention */
-}
-
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
@@ -23,4 +15,49 @@
     60% {
         transform: translateY(-5px);
     }
+}
+
+.start-btn {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0); /* Gold color; adjust as needed */
+    color: #fff; /* Text color */
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    font-weight: bold; /* Make the text bold */
+    animation: bounce 2s infinite;
+    margin-top: 10px;
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.start-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25); /* Lighter gold on hover for visual feedback */
+}
+
+.center-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width */
+}
+
+.wordmark-container {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+    text-align: center; /* Ensure text inside the container is centered, affects inner content alignment */
+}
+
+.wordmark {
+    width: 30%;
+    height: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
 }
