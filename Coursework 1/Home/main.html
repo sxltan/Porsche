@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>   
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+
+    <video id="background-video" autoplay muted loop>
+        <source src="background.mp4" type="video/mp4">
+    </video>
+
+    <audio id="background-audio" loop autoplay unmuted>
+        <source src="911 GT2 RS Background.mp3" type="audio/mp3">
+    </audio>
+    
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="active"><a href="#home">Porsche & The 911</a></li>
+            <li><a href="../Page 2/page2.html">1963 - 1989</a></li>
+            <li><a href="../Page 3/page3.html">1988 - 1998</a></li>
+            <li><a href="../Page 4/page4.html">1997 - 2012</a></li>
+            <li><a href="../Page 5/page5.html">2011 - 2024</a></li>
+        </ul>
+    </nav>
+
+    <div class="wordmark-container">
+        <img src="Porsche_inverted.png" alt="Porsche Wordmark" class="wordmark">
+        <div id="arrow" class="arrow">↓</div> <!-- Arrow icon -->
+    </div>
+    
+    <div class="content">
+
+        <img src="Porsche_inverted.png" alt="Porsche 911" class="wordmark">
+
+        <p class="intro-text">
+            Coming from humble beginnings, Porsche history dates back to 1948, where founder Ferdinand Porsche created the Porsche brand with just 200 workers. The first Porsche model was introduced later that year, named the Porsche 356, and 52 cars were then produced in 1949 in a small garage. A few years later, in 1963, the first Porsche 911 was released. This was truly the start of an extraordinary evolution of one of the most ommunity-beloved cars ever made.
+        </p>
+        <p class="intro-text">
+            The first ever Porsche 911 was designed by F.A. Porsche – son of the founder of the company, Ferry Porsche – and his team. The original 911 had an air-cooled flat-six engine instead of the four-cylinder boxer engine of the 356. It developed 130PS, could accelerate from 0-100km/h in 9.1 seconds and had a top speed of 210km/h. These were hugely impressive figures for a production sportscar at the time. Although there have been many versions of the 911 since then, much has remained the same, like its 2 + 2 seating layout and rear engine position.
+        </p>
+        <p class="intro-text">
+            Many great Porsche designers have been involved in updating and evolving the 911 over the decades. They include such legendary figures as Anatole Lapine, who designed the G series, the successor to the original 911, and Harm Lagaay. This Dutchman was chief designer at Porsche from 1989 to 2004 and was the man who, among many other highlights, introduced the much talked about ‘fried egg’ headlights on the 911 (type 996). And, since 2004, it's been Michael Mauer who has overseen design of the 911 in his role as Head of Style Porsche.
+        </p>
+        <p class="intro-text">
+            The Porsche 911 remains the epitome of timeless automotive design. There is no other sportscar that has evolved over 60 years and yet has kept the essence of its original design quite like the 911 has, with its perfect proportions, flowing curves and sporty attitude.
+        </p>
+
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // This part can remain the same if you want to start with the audio unmuted or at a specific volume
+            var initialAudio = document.getElementById('background-audio');
+            if(initialAudio) {
+                initialAudio.volume = 0.25; // Start with full volume or adjust as needed
+            }
+        
+            // Event listener for the down arrow click
+            document.getElementById('arrow').addEventListener('click', function() {
+                // Hide the Porsche wordmark assuming it's the only element with class 'wordmark'
+                var porsche = document.querySelector('.wordmark'); // Select the wordmark using its class
+                if (porsche) {
+                    porsche.style.display = 'none';
+                }
+                
+                // Hide the arrow itself
+                this.style.display = 'none';
+        
+                // Make the content block visible
+                var content = document.querySelector('.content');
+                content.style.display = 'block';
+        
+                // Start the opacity transition
+                setTimeout(function() {
+                    content.style.opacity = 1;
+                }, 10); // Short timeout to ensure the display change has taken effect
+                
+                // Decrease the volume by 50% when the down arrow is clicked
+                var audio = document.getElementById('background-audio');
+                audio.volume = 0.025; // Reduce volume to 50%
+            });
+        });
+        </script>
+    
+</body>
+</html>

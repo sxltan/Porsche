@@ -1,0 +1,26 @@
+.content {
+    display: none;
+    opacity: 0;
+    transition: opacity 2s ease, transform 2s ease; /* Smooth transition for the content */
+    /* Other styles remain unchanged */
+}
+
+.arrow {
+    cursor: pointer;
+    text-align: center;
+    font-size: 24px; /* Adjust size as needed */
+    color: #fff; /* Arrow color */
+    animation: bounce 2s infinite; /* Add a bounce animation to draw attention */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}

@@ -1,0 +1,133 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #1A1E23; /* Consider a gradient or lighter tone */
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Navigation styles */
+  nav {
+      position: fixed;
+      top: 0; /* Align to the top */
+      width: 100%; /* Make sure nav spans the entire width */
+      background: rgba(0, 0, 0, 0.85); /* Make nav slightly transparent */
+      z-index: 10; /* Make sure nav stays on top */
+      padding: 10px 0; /* Add some padding */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.75); /* Soft shadow for depth */
+  }
+  
+  nav ul {
+    padding: 0;
+    margin: 0 20px; /* Sides padding for nav */
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center nav items horizontally */
+  }
+  
+  nav ul li {
+    margin: 0 20px; /* Spacing between nav items */
+    opacity: .7;
+    transition: all 0.4s ease;
+  }
+  
+  nav ul li:hover, nav ul li.active {
+    opacity: 1;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 600;
+    letter-spacing: .2em;
+    font-size: 14px;
+  }
+  
+  #background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .video-container {
+    text-align: center; /* Center the video */
+    margin-top: 40px; /* Add some space above the video */
+    }
+  
+  .content {
+      position: relative; /* Changed from absolute to relative */
+      max-width: 1200px; /* Max width for better readability */
+      padding: 40px; /* More padding for a better boxed look */
+      background: rgba(0, 0, 0, 0.85); /* Slightly more opaque */
+      border-radius: 10px;
+      margin: 100px auto 0; /* Add top margin to avoid nav overlap */
+      text-align: left; /* Left align text for readability */
+  }
+  
+  .intro-text {
+      font-size: 18px; /* Slightly increased font size */
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #CCC; /* Lighter text for less contrast */
+  }
+  
+  @media screen and (max-width: 768px) {
+    nav ul li {
+      margin: 0 10px; /* Less margin on smaller screens */
+    }
+
+    .content {
+      width: 90%;
+      margin-top: 60px; /* Less margin on smaller screens */
+    }
+
+    .intro-text {
+      font-size: 16px;
+    }
+    }
+
+    .wordmark {
+        width: 30%;
+        height: 30%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+
+    @font-face {
+        font-family: 'Porsche_Regular';
+        src: url('Porsche_Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    h1 {
+        font-family: 'Porsche_Regular', sans-serif; /* Fallback font */
+        color: #fff;
+        text-align: center;
+        margin-top: auto;
+    }
+
+    h2 {
+        font-family: 'Porsche_Regular', sans-serif; /* Fallback font */
+        color: #CCC;
+        text-align: center;
+        margin-top: auto;
+    }
+    
