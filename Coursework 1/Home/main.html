@@ -33,6 +33,8 @@
     </div>    
     
     <div class="content">
+        
+        <div id="close-btn" class="close-btn">x</div>
 
         <img src="Porsche_inverted.png" alt="Porsche 911" class="wordmark">
 
@@ -53,40 +55,36 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // This part can remain the same if you want to start with the audio at a specific volume
             var initialAudio = document.getElementById('background-audio');
             if(initialAudio) {
                 initialAudio.volume = 0.25; // Start with a reduced volume or adjust as needed
             }
         
-            // Update the event listener to target the 'start-button' instead of 'arrow'
             document.getElementById('start-button').addEventListener('click', function() {
-                // Hide the Porsche wordmark assuming it's the only element with class 'wordmark'
-                var porsche = document.querySelector('.wordmark'); // Select the wordmark using its class
-                if (porsche) {
-                    porsche.style.display = 'none';
-                }
-                
-                // Since we're using the start button now, hide the container that might also contain the arrow
                 document.querySelector('.wordmark-container').style.display = 'none';
-        
-                // Make the content block visible
                 var content = document.querySelector('.content');
                 content.style.display = 'block';
-        
-                // Start the opacity transition
                 setTimeout(function() {
                     content.style.opacity = 1;
-                }, 10); // Short timeout to ensure the display change has taken effect
-                
-                // Adjust the volume or stop the audio as required when the start button is clicked
-                // Here, we're continuing to decrease the volume as per the original functionality
+                }, 10);
                 var audio = document.getElementById('background-audio');
-                audio.volume = 0.025; // Example: Further reduce volume to 2.5%
+                audio.volume = 0.025; // Reduce volume to 2.5%
+            });
+        
+            // Adjusted event listener for the close button
+            document.getElementById('close-btn').addEventListener('click', function() {
+                var content = document.querySelector('.content');
+                content.style.opacity = 0; // Start hiding the content
+                // Wait for the opacity transition to fully complete before setting display to none
+                setTimeout(function() {
+                    content.style.display = 'none';
+                    document.querySelector('.wordmark-container').style.display = 'flex'; // Show the wordmark container again
+                    var audio = document.getElementById('background-audio');
+                    audio.volume = 0.25; // Reset volume or adjust as needed
+                }, 1500); // Match this timeout to your CSS transition duration (2000ms for 2 seconds)
             });
         });
-        </script>
+        </script>             
         
-    
 </body>
 </html>
