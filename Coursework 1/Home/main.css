@@ -19,6 +19,7 @@
     margin-top: 10px;
     font-family: 'Lato', sans-serif;
     -webkit-font-smoothing: antialiased;
+    border: 2px solid #fff;
 }
 
 .start-btn:hover {
