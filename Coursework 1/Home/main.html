@@ -62,8 +62,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             var audio = document.getElementById('background-audio');
             // Initially set the audio to not play automatically. Muting or pausing could be options depending on your setup.
-            // audio.volume = 0; // Consider commenting this out if you don't want to start muted or adjust here as needed.
-            // audio.pause(); // Alternatively, you can pause the audio initially.
+            audio.volume = 0; // Consider commenting this out if you don't want to start muted or adjust here as needed.
+            audio.pause(); // Alternatively, you can pause the audio initially.
             
             document.getElementById('start-button').addEventListener('click', function() {
                 document.querySelector('.wordmark-container').style.display = 'none';
