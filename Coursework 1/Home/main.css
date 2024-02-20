@@ -2,7 +2,6 @@
     display: none;
     opacity: 0;
     transition: opacity 2s ease, transform 2s ease; /* Smooth transition for the content */
-    /* Other styles remain unchanged */
 }
 
 .start-btn {
@@ -20,6 +19,7 @@
     font-family: 'Lato', sans-serif;
     -webkit-font-smoothing: antialiased;
     border: 2px solid #fff;
+    cursor: pointer;
 }
 
 .start-btn:hover {
@@ -37,6 +37,10 @@
     color: #ffffff;
     font-family: 'Lato', sans-serif;
     -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
 }
 
 .center-container {
@@ -83,4 +87,44 @@
     60% {
         transform: translateY(-5px);
     }
+}
+
+/* When the checkbox is checked, hide the button and the logo */
+#toggle-content:checked ~ .wordmark-container .start-btn,
+#toggle-content:checked ~ .wordmark-container .wordmark {
+    display: none;
+}
+
+/* Display the content when checkbox is checked */
+#toggle-content:checked ~ .content {
+    display: block;
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+/* Initial state of the content is hidden */
+#toggle-content:not(:checked) ~ .content {
+    display: none;
+    opacity: 0;
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+/* Hide the close button initially; it will be shown when the content is visible */
+#toggle-content:not(:checked) ~ .content .close-btn {
+    display: none;
+}
+
+/* Show the close button when the content is displayed */
+#toggle-content:checked ~ .content .close-btn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-right: 20px;
+    font-size: 30px; /* Adjust the size as needed */
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing: antialiased;
 }

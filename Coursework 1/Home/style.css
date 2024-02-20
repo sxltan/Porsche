@@ -68,7 +68,7 @@
     text-align: center; /* Center the video */
     margin-top: 40px; /* Add some space above the video */
     }
-  
+    
   .content {
       position: relative; /* Changed from absolute to relative */
       max-width: 1200px; /* Max width for better readability */

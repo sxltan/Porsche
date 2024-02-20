@@ -10,10 +10,10 @@
         <source src="background.mp4" type="video/mp4">
     </video>
 
-    <audio id="background-audio" autoplay loop >
+    <audio id="background-audio" loop autoplay>
         <source src="911 GT2 RS Background.mp3" type="audio/mp3">
     </audio>
-
+    
 </head>
 
 <body>
@@ -27,20 +27,16 @@
         </ul>
     </nav>
 
-    <!-- Checkbox for toggling content -->
-    <input type="checkbox" id="toggle-content" style="display:none;">
-
     <div class="wordmark-container">
         <img src="Porsche_inverted.png" alt="Porsche Wordmark" class="wordmark">
-        <label for="toggle-content" class="start-btn">START <br> ENGINE</label>
-    </div>
-
+        <div id="start-button" class="start-btn">START <br> ENGINE</div>
+    </div>    
+    
     <div class="content">
-
-        <label for="toggle-content" class="close-btn">x</label>
+        
+        <div id="close-btn" class="close-btn">x</div>
 
         <img src="Porsche_inverted.png" alt="Porsche" class="wordmark">
-        <a href="https://www.porsche.com" target="_blank" title="Official Porsche Website"><img src="porsche_logo_main.png" alt="Porsche Logo" class="logo"></a>
 
         <p class="intro-text">
             From the creation of distant idea in 1948 by Ferdinand Porsche, a German-Bohemian automotive engineer and founder of Porsche, and his modest team of 200, to the revolutionary release of the first Porsche 911 in 1963, this website is dedicated to showcasing the extraordinary evolution of the Porsche 911. A car that has captured the hearts of enthusiasts worldwide, it has established its place as a true icon of automotive excellence.
@@ -58,6 +54,42 @@
             Join us in exploring the rich history, the iconic designs, and the relentless pursuit of perfection that defines the Porsche 911 series. Whether you are a long-time aficionado or new to the world of Porsche, this website promises a captivating journey through the legacy of a car that has become much more than just a vehicle—it's a piece of automotive history.
         </p>
 
+        <a href="https://www.porsche.com" target="_blank" title="Official Porsche Website"><img src="porsche_logo_main.png" alt="Porsche Logo" class="logo"></a>
+
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-audio');
+            // Initially set the audio to not play automatically. Muting or pausing could be options depending on your setup.
+            audio.volume = 0; // Consider commenting this out if you don't want to start muted or adjust here as needed.
+            audio.pause(); // Alternatively, you can pause the audio initially.
+            
+            document.getElementById('start-button').addEventListener('click', function() {
+                document.querySelector('.wordmark-container').style.display = 'none';
+                var content = document.querySelector('.content');
+                content.style.display = 'block';
+                setTimeout(function() {
+                    content.style.opacity = 1;
+                }, 10);
+                
+                // Play the audio when the start button is clicked.
+                // Set the desired volume level before playing if needed. This ensures the audio plays at the right volume.
+                audio.volume = 0.25; // Set the volume to 25%. Adjust this value as needed.
+                audio.play(); // Attempts to play the audio.
+            });
+            
+            document.getElementById('close-btn').addEventListener('click', function() {
+                var content = document.querySelector('.content');
+                content.style.opacity = 0;
+                setTimeout(function() {
+                    content.style.display = 'none';
+                    document.querySelector('.wordmark-container').style.display = 'flex'; // Show the wordmark container again.
+                    // audio.pause(); // If you want to stop the audio, uncomment this line.
+                    // audio.currentTime = 0; // Reset audio playback to the start if stopping. Uncomment if pausing.
+                }, 2000); // Ensure this matches your CSS transition time for opacity.
+            });
+        });
+        </script>
 </body>
 </html>
