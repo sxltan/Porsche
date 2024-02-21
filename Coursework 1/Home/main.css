@@ -1,64 +1,66 @@
+/* Hides content initially with a smooth transition for later reveal */
 .content {
     display: none;
     opacity: 0;
-    transition: opacity 2s ease, transform 2s ease; /* Smooth transition for the content */
+    transition: opacity 2s ease, transform 2s ease; 
 }
 
+/* Styles for the 'START ENGINE' button */
 .start-btn {
     display: inline-block;
-    background-color: rgba(0, 0, 0, 0); /* Gold color; adjust as needed */
-    color: #fff; /* Text color */
+    background-color: rgba(0, 0, 0, 0); /* Initially transparent background */
+    color: #fff; /* White text color */
     text-align: center;
     padding: 10px 20px;
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Change cursor to indicate it's clickable */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-    font-weight: bold; /* Make the text bold */
-    animation: bounce 2s infinite;
-    margin-top: 10px;
-    font-family: 'Lato', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    border: 2px solid #fff;
-    cursor: pointer;
+    border-radius: 5px; /* Rounded corners (for aesthetic) */
+    cursor: pointer; /* Indicates button is clickable */
+    transition: background-color 0.3s ease; /* Color transition for interactive feedback */
+    font-weight: bold; 
+    animation: bounce 2s infinite; /* Bouncing animation for user attention */
+    margin-top: 10px; 
+    font-family: 'Lato', sans-serif; /* Font styling */
+    -webkit-font-smoothing: antialiased; /* Improves text rendering in webkit browsers (Safari, Chrome, etc.) */
+    border: 2px solid #fff; 
 }
 
+/* Hover effect for the 'START BUTTON' button for visual feedback */
 .start-btn:hover {
-    background-color: rgba(255, 255, 255, 0.25); /* Lighter gold on hover for visual feedback */
+    background-color: rgba(255, 255, 255, 0.25); 
 }
 
+/* Styles for the 'x' button */
 .close-btn {
     position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-    margin-top: 15px;
+    top: 20px; 
+    right: 20px; 
+    cursor: pointer; /* Indicates button is clickable */
+    margin-top: 15px; 
     margin-right: 20px;
-    font-size: 30px; /* Adjust the size as needed */
-    color: #ffffff;
-    font-family: 'Lato', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    cursor: pointer;
-    position: absolute;
-    top: 20px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
+    font-size: 30px; /* Size of the 'x' icon */
+    color: #ffffff; /* White color */
+    font-family: 'Lato', sans-serif; 
+    -webkit-font-smoothing: antialiased; /* Improves text rendering in webkit browsers (Safari, Chrome, etc.) */
 }
 
+/* Container to center both horizontally and vertically */
 .center-container {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full viewport height */
-    width: 100%; /* Full width */
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; /* Full height of the screen */
+    width: 100%; /* Full width of the screen */
 }
 
+/* Container for wordmark with centered and stacked children */
 .wordmark-container {
     display: flex;
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Center children vertically */
-    align-items: center; /* Center children horizontally */
-    text-align: center; /* Ensure text inside the container is centered, affects inner content alignment */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
 }
 
+/* Styles for wordmark */
 .wordmark {
     width: 30%;
     height: 30%;
@@ -68,6 +70,7 @@
     margin-bottom: 30px;
 }
 
+/* Styles for logo */
 .logo {
     width: 10%;
     height: 10%;
@@ -77,6 +80,8 @@
     margin-top: 30px;
 }
 
+/* Keyframes for bounce animation used on the 'START ENGINE' button */
+/* Learned from https://gist.github.com/ivo-ivanov/39f40a3ea0e973f7e280536f2d114311 */
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
@@ -89,42 +94,32 @@
     }
 }
 
-/* When the checkbox is checked, hide the button and the logo */
+/* When the checkbox is checked, hide the 'START ENGINE' button and wordmark */
 #toggle-content:checked ~ .wordmark-container .start-btn,
 #toggle-content:checked ~ .wordmark-container .wordmark {
     display: none;
 }
 
-/* Display the content when checkbox is checked */
+/* Display the content section when checkbox is checked */
 #toggle-content:checked ~ .content {
     display: block;
     opacity: 1;
-    transition: opacity 2s ease;
+    transition: opacity 2s ease; /* Smooth transition for opacity */
 }
 
-/* Initial state of the content is hidden */
+/* Ensure content is hidden when checkbox is not checked */
 #toggle-content:not(:checked) ~ .content {
     display: none;
     opacity: 0;
-    transition: opacity 2s ease, transform 2s ease;
+    transition: opacity 2s ease, transform 2s ease; /* Maintain smooth transitions */
 }
 
-/* Hide the close button initially; it will be shown when the content is visible */
+/* Initially hide the close 'x' button, shown only when content is visible */
 #toggle-content:not(:checked) ~ .content .close-btn {
     display: none;
 }
 
-/* Show the close button when the content is displayed */
+/* Show the close 'x' button when content is visible, positioned absolutely */
 #toggle-content:checked ~ .content .close-btn {
     display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-    margin-top: 15px;
-    margin-right: 20px;
-    font-size: 30px; /* Adjust the size as needed */
-    color: #ffffff;
-    font-family: 'Lato', sans-serif;
-    -webkit-font-smoothing: antialiased;
 }

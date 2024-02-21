@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<html>
-<head>   
-    <title>Home</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="main.css"/>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"> <!-- The language of the webpage -->
+<head>
+    <title>Home</title> <!-- The title of the webpage -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- Logo for the website's tab -->
+    <link rel="stylesheet" type="text/css" href="main.css"/> <!-- Main CSS file -->
+    <link rel="stylesheet" type="text/css" href="style.css"/> <!-- Additional specific CSS file for styling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Responsive design meta tag -->
 
-    <video id="background-video" autoplay muted loop>
+    <video id="background-video" autoplay muted loop> <!-- Background video -->
         <source src="background.mp4" type="video/mp4">
     </video>
 
-    <audio id="background-audio" autoplay loop >
+    <audio id="background-audio" autoplay loop > <!-- Background audio, autoplay might not work depending on browser settings -->
         <source src="911 GT2 RS Background.mp3" type="audio/mp3">
     </audio>
 
 </head>
 
 <body>
-    <nav>
-        <ul>
+    <nav> <!-- Navigation bar -->
+        <ul> <!-- List of navigation internal links -->
             <li class="active"><a href="#home">Porsche & The 911</a></li>
             <li><a href="../Page 2/page2.html">1963 - 1989</a></li>
             <li><a href="../Page 3/page3.html">1988 - 1998</a></li>
@@ -29,22 +28,22 @@
         </ul>
     </nav>
 
-    <!-- Checkbox for toggling content -->
+    <!-- Hidden checkbox for toggling content, used with the labels below -->
     <input type="checkbox" id="toggle-content" style="display:none;">
 
-    <div class="wordmark-container">
+    <div class="wordmark-container"> <!-- Container for the Porsche wordmark logo and 'START ENGINE' button -->
         <img src="Porsche_inverted.png" alt="Porsche Wordmark" class="wordmark">
-        <label for="toggle-content" class="start-btn">START <br> ENGINE</label>
+        <label for="toggle-content" class="start-btn">START <br> ENGINE</label> <!-- The label acts as a button to show hidden content -->
     </div>
 
-    <div class="content">
+    <div class="content"> <!-- Main content section -->
 
-        <label for="toggle-content" class="close-btn">x</label>
+        <label for="toggle-content" class="close-btn">x</label> <!-- The label also acts as a button to hide the shown content -->
 
-        <img src="Porsche_inverted.png" alt="Porsche" class="wordmark">
-        <a href="https://www.porsche.com" target="_blank" title="Official Porsche Website"><img src="porsche_logo_main.png" alt="Porsche Logo" class="logo"></a>
+        <img src="Porsche_inverted.png" alt="Porsche" class="wordmark"> <!-- Porsche wordmark logo again -->
+        <a href="https://www.porsche.com" target="_blank" title="Official Porsche Website"><img src="porsche_logo_main.png" alt="Porsche Logo" class="logo"></a> <!-- Hyperlink to official Porsche website -->
 
-        <p class="intro-text">
+        <p class="intro-text"> <!-- Paragraphs -->
             From the creation of distant idea in 1948 by Ferdinand Porsche, a German-Bohemian automotive engineer and founder of Porsche, and his modest team of 200, to the revolutionary release of the first Porsche 911 in 1963, this website is dedicated to showcasing the extraordinary evolution of the Porsche 911. A car that has captured the hearts of enthusiasts worldwide, it has established its place as a true icon of automotive excellence.
         </p>
         <p class="intro-text">

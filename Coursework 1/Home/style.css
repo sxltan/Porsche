@@ -1,109 +1,110 @@
-/* General styles */
+/* Main CSS File for all HTML Files */
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    background: #1A1E23; /* Consider a gradient or lighter tone */
-    font-family: 'Lato', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  /* Navigation styles */
-  nav {
-      position: fixed;
-      top: 0; /* Align to the top */
-      width: 100%; /* Make sure nav spans the entire width */
-      background: rgba(0, 0, 0, 0.85); /* Make nav slightly transparent */
-      z-index: 10; /* Make sure nav stays on top */
-      padding: 10px 0; /* Add some padding */
-      box-shadow: 0 2px 5px rgba(0,0,0,0.75); /* Soft shadow for depth */
-  }
-  
-  nav ul {
-    padding: 0;
-    margin: 0 20px; /* Sides padding for nav */
-    list-style: none;
-    display: flex;
-    justify-content: center; /* Center nav items horizontally */
-  }
-  
-  nav ul li {
-    margin: 0 20px; /* Spacing between nav items */
-    opacity: .7;
-    transition: all 0.4s ease;
-  }
-  
-  nav ul li:hover, nav ul li.active {
-    opacity: 1;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    text-transform: uppercase;
-    display: block;
-    font-weight: 600;
-    letter-spacing: .2em;
-    font-size: 14px;
-  }
-  
-  #background-video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-  }
+  box-sizing: border-box;
+}
 
-  .video-container {
-    text-align: center; /* Center the video */
-    margin-top: 40px; /* Add some space above the video */
-    }
-    
-  .content {
-      position: relative; /* Changed from absolute to relative */
-      max-width: 1200px; /* Max width for better readability */
-      padding: 40px; /* More padding for a better boxed look */
-      background: rgba(0, 0, 0, 0.85); /* Slightly more opaque */
-      border-radius: 10px;
-      margin: 100px auto 0; /* Add top margin to avoid nav overlap */
-      text-align: left; /* Left align text for readability */
-  }
-  
-  .intro-text {
-      font-size: 18px; /* Slightly increased font size */
-      line-height: 1.8;
-      margin-bottom: 20px;
-      color: #CCC; /* Lighter text for less contrast */
-  }
+body {
+  background: #1A1E23; /* Dark gray background */
+  font-family: 'Lato', sans-serif; /* Main font for text */
+  -webkit-font-smoothing: antialiased; /* Improve the rendering of fonts on webkit browsers (Safari, Chrome, etc.) */
+  display: flex; /* Flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  min-height: 100vh; /* Full height of the viewport */
+}
 
-    @font-face {
-        font-family: 'Porsche_Regular';
-        src: url('Porsche_Regular.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-    }
+/* Font face for custom Porsche font */
+@font-face {
+  font-family: 'Porsche_Regular';
+  src: url('Porsche_Regular.ttf') format('truetype'); /* Path to the font file */
+  font-weight: normal;
+  font-style: normal;
+}
 
-    h1 {
-        font-family: 'Porsche_Regular', sans-serif; /* Fallback font */
-        color: #fff;
-        text-align: center;
-        margin-top: auto;
-    }
+/* Styling for headings using 'Porsche_Regular' font */
+h1, h2 {
+  font-family: 'Porsche_Regular', sans-serif; /* Custom font, with sans-serif as fallback (accessibility) */
+  color: #fff; /* White color for headings */
+  text-align: center; /* Center align headings */
+}
 
-    h2 {
-        font-family: 'Porsche_Regular', sans-serif; /* Fallback font */
-        color: #CCC;
-        text-align: center;
-        margin-top: auto;
-    }
-    
+h2 {
+  color: #CCC; /* Lighter grey for subheadings (better readability) */
+}
+
+/* Navigation styles */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85); /* Semi-transparent black background */
+  z-index: 10; /* Ensures navigation menu is above other content */
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.75); /* Subtle shadow for depth */
+}
+
+nav ul {
+  padding: 0;
+  margin: 0 20px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 20px;
+  opacity: .7; /* Slightly transparent */
+  transition: all 0.4s ease; /* Smooth transition for hover effect */
+}
+
+nav ul li:hover, nav ul li.active {
+  opacity: 1; /* Fully opaque on hover/active */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff; /* White text */
+  text-transform: uppercase; /* Uppercase text for style */
+  display: block;
+  font-weight: 600; /* Bold font weight */
+  letter-spacing: .2em; /* Spacing between letters */
+  font-size: 14px; /* Font size */
+}
+
+/* Background video styling */
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Ensure video covers the entire screen */
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1; /* Place video behind all content (background) */
+}
+
+/* Styling for the video container (YouTube) */
+.video-container {
+  text-align: center; 
+  margin-top: 40px; 
+}
+
+/* Content styling */
+.content {
+  position: relative;
+  max-width: 1200px; /* Maximum width for readability */
+  padding: 40px; /* Padding around content */
+  background: rgba(0, 0, 0, 0.85); /* Semi-transparent black background */
+  border-radius: 10px; /* Rounded corners (modern aesthetics) */
+  margin: 100px auto 0; /* Center horizontally with top margin */
+  text-align: left; /* Align text to the left */
+}
+
+/* Intro text styling */
+.intro-text {
+  font-size: 18px; /* Slightly larger font size */
+  line-height: 1.8; /* Line height (for readability) */
+  margin-bottom: 20px; /* Space between paragraphs */
+  color: #CCC; /* Light grey color (better contrast) */
+}
