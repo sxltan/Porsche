@@ -1,0 +1,88 @@
+/* Style inputs with type="text", select elements and textareas */
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    /* Full width */
+    padding: 12px;
+    /* Some padding */
+    background: #ff000035;
+    /* Background color similar to body */
+    border: 2px solid #333;
+    /* Border color similar to 'start-btn' */
+    border-radius: 4px;
+    /* Rounded borders similar to 'start-btn' */
+    box-sizing: border-box;
+    /* Make sure that padding and width stays in place */
+    margin-top: 6px;
+    /* Add a top margin */
+    margin-bottom: 16px;
+    /* Bottom margin */
+    color: #CCC;
+    /* Text color similar to intro-text */
+    font-family: 'Lato', sans-serif;
+    /* Font family from body */
+    resize: vertical
+        /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: rgba(255, 255, 255, 0.147);
+    /* Background color similar to 'start-btn:hover' */
+    color: white;
+    padding: 12px 20px;
+    border: 2px solid #fff;
+    /* Border color similar to 'start-btn' */
+    border-radius: 4px;
+    /* Rounded borders similar to 'start-btn' */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Smooth transition for hover effect */
+    font-family: 'Lato', sans-serif;
+    /* Font family from body */
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #04AA6D;
+    /* Darker green color for hover effect */
+}
+
+/* Add a background color and some padding around the form */
+.container {
+    border-radius: 5px;
+    background-color: #00000000;
+    /* Background color similar to body */
+    padding: 20px;
+    color: #CCC;
+    /* Text color similar to intro-text */
+    font-family: 'Lato', sans-serif;
+    /* Font family from body */
+}
+
+/* Center the submit button without affecting other elements */
+.submit-container {
+    text-align: center;
+    /* Centers inline and inline-block elements within */
+}
+
+/* Specific styling for the submit button if needed */
+.submit-button {
+    /* Style as needed, for example: */
+    padding: 10px 20px;
+    /* Padding for button size */
+    margin-top: 10px;
+    /* Space above the button */
+    /* Other properties here */
+}
+
+.response-message {
+    background-color: #04AA6D;
+    /* or any color you prefer */
+    color: white;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}

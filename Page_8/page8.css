@@ -1,0 +1,20 @@
+.carousel-item img {
+    height: 500px;  /* Set a fixed height for all images in the carousel */
+    object-fit: cover;  /* Ensure images cover the carousel area without stretching */
+    border-radius: 20px;  /* Adds rounded borders to the images */
+    padding: 10px; /* Adds space around the images */
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: auto;  /* Allows the image height to scale with the width on smaller screens */
+    }
+    .carousel-item {
+        padding: 5px; /* Reduces padding on smaller screens */
+    }
+}
+
+.content.container {
+    padding-top: 15; /* Adjust padding if it's contributing to the space */
+    margin-top: 0; /* Adjust margin if necessary */
+}

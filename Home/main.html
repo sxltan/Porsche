@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- The language of the webpage -->
+
+<head>
+    <title>Home</title> <!-- The title of the webpage -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- Logo for the website's tab -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Responsive design meta tag -->
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" type="text/css" href="main.css"> <!-- Main CSS file -->
+    <link rel="stylesheet" type="text/css" href="style.css"> <!-- Additional specific CSS file for styling -->
+</head>
+
+<body>
+    <video id="background-video" autoplay muted loop> <!-- Background video -->
+        <source src="background.mp4" type="video/mp4">
+    </video>
+
+    <audio id="background-audio" autoplay loop>
+        <!-- Background audio, autoplay might not work depending on browser settings -->
+        <source src="background_audio.mp3" type="audio/mp3">
+    </audio>
+
+    <nav> <!-- Navigation bar -->
+        <ul> <!-- List of navigation internal links -->
+            <li class="active"><a href="#home">Porsche & The 911</a></li>
+            <li><a href="../Page_2/page2.html">1963 - 1989</a></li>
+            <li><a href="../Page_3/page3.html">1988 - 1998</a></li>
+            <li><a href="../Page_4/page4.html">1997 - 2012</a></li>
+            <li><a href="../Page_5/page5.html">2011 - 2024</a></li>
+            <li><a href="../Page_6/page6.html">Music</a></li>
+            <li><a href="../Page_7/page7.html">Timeline</a></li>
+            <li><a href="../Page_8/page8.html">Social</a></li>
+            <li><a href="../Page_9/page9.html">Events</a></li>
+            <li><a href="../Page_10/page10.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hidden checkbox for toggling content, used with the labels below -->
+    <input type="checkbox" id="toggle-content" style="display:none;">
+
+    <div class="wordmark-container"> <!-- Container for the Porsche wordmark logo and 'START ENGINE' button -->
+        <img src="Porsche_inverted.png" alt="Porsche Wordmark" class="wordmark">
+        <label for="toggle-content" class="start-btn" id="start-button">START <br> ENGINE</label>
+        <!-- The label acts as a button to show hidden content -->
+    </div>
+
+    <div class="content">
+        <label for="toggle-content" class="close-btn" id="close-btn">x</label>
+        <img src="Porsche_inverted.png" alt="Porsche" class="wordmark">
+        <a href="https://www.porsche.com" target="_blank" title="Official Porsche Website"><img
+                src="porsche_logo_main.png" alt="Porsche Logo" class="logo"></a>
+
+        <p class="intro-text"> <!-- Paragraphs -->
+            From the creation of distant idea in 1948 by Ferdinand Porsche, a German-Bohemian automotive engineer and
+            founder of Porsche, and his modest team of 200, to the revolutionary release of the first Porsche 911 in
+            1963, this website is dedicated to showcasing the extraordinary evolution of the Porsche 911. A car that has
+            captured the hearts of enthusiasts worldwide, it has established its place as a true icon of automotive
+            excellence.
+        </p>
+        <p class="intro-text">
+            The journey of the Porsche 911 series is a testament to innovation, design, and engineering prowess. The
+            original 911, crafted by F.A. Porsche, son of the founder, set a new benchmark for sports cars with its
+            air-cooled flat-six engine, achieving 130PS (PferdStarke) a 0-100km/h acceleration in 9.1 seconds, and a top
+            speed of 210km/h. These impressive specifications laid the foundation for a legacy that has continuously
+            evolved while maintaining its core infrastructure.
+        </p>
+        <p class="intro-text">
+            Over the decades, the Porsche 911 has seen the influence of legendary designers like Anatole Lapine and Harm
+            Lagaay, contributing to its ever-evolving aesthetic and performance capabilities. The series has not only
+            adapted to the changing times but has overall maintained its iconic status through a balance of tradition
+            and innovation, ensuring that the 911 remains at the pinnacle of timeless automotive design.
+        </p>
+        <p class="intro-text">
+            Our website is a celebration of the Porsche 911's journey through time. Here, you will find detailed
+            information on the various models that have been part of this storied lineage, from the classic elegance of
+            the original 911 to the contemporary sophistication of its latest iterations. We aim to provide a
+            comprehensive overview of how the Porsche 911 has remained a symbol of automotive perfection, evolving over
+            60 years without losing the essence of its original design.
+        </p>
+        <p class="intro-text">
+            Join us in exploring the rich history, the iconic designs, and the relentless pursuit of perfection that
+            defines the Porsche 911 series. Whether you are a long-time aficionado or new to the world of Porsche, this
+            website promises a captivating journey through the legacy of a car that has become much more than just a
+            vehicle—it's a piece of automotive history.
+        </p>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            var audio = $('#background-audio').get(0);
+            audio.volume = 0; // Start with the audio muted
+            audio.pause(); // Pause the audio initially
+        
+            $('#start-button').click(function() {
+                $('.wordmark-container').hide();
+                audio.volume = 0.25; // Set volume to 25% on play
+                audio.play(); // Play the audio
+                $('.content').fadeIn(5); // Smoothly fade in the content over 1000 milliseconds
+            });
+        
+            $('#close-btn').click(function() {
+                $('.content').fadeOut(1000, function() { // Smoothly fade out the content over 1000 milliseconds
+                    $('.wordmark-container').css('display', 'flex'); // Display the wordmark container again
+                });
+            });
+        });
+    </script>    
+
+</body>
+
+</html>

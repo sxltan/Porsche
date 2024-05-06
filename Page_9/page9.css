@@ -1,0 +1,32 @@
+/* General settings for calendar content */
+.fc th,
+.fc td {
+    color: white !important; /* Set text color for general calendar text to white */
+}
+
+/* Black text settings for events and header items */
+.fc-event .fc-title,
+.fc-event {
+    color: black !important; /* Event text color */
+}
+
+/* Header styles */
+.fc-toolbar {
+    color: black !important; /* Sets all text in the toolbar to black */
+}
+
+/* Navigation buttons styles */
+.fc-button {
+    color: black !important; /* Button text color */
+    background-color: #f8f9fa !important; /* Light grey background for buttons */
+    border-color: #ddd !important; /* Border color for buttons */
+}
+
+/* Specific style for today's date */
+.fc-today .fc-day-number {
+    color: black !important; /* Sets text color for today's date */
+}
+
+.content {
+    background: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
+}

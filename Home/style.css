@@ -1,0 +1,117 @@
+/* Main CSS File for all HTML Files */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #1A1E23; /* Dark gray background */
+  font-family: 'Lato', sans-serif; /* Main font for text */
+  -webkit-font-smoothing: antialiased; /* Improve the rendering of fonts on webkit browsers (Safari, Chrome, etc.) */
+  display: flex; /* Flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  min-height: 100vh; /* Full height of the viewport */
+}
+
+/* Font face for custom Porsche font */
+@font-face {
+  font-family: 'Porsche_Regular';
+  src: url('Porsche_Regular.ttf') format('truetype'); /* Path to the font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Styling for headings using 'Porsche_Regular' font */
+h1, h2 {
+  font-family: 'Porsche_Regular', sans-serif; /* Custom font, with sans-serif as fallback (accessibility) */
+  color: #fff; /* White color for headings */
+  text-align: center; /* Center align headings */
+}
+
+h2 {
+  color: #CCC; /* Lighter grey for subheadings (better readability) */
+}
+
+/* Navigation styles */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85); /* Semi-transparent black background */
+  z-index: 10; /* Ensures navigation menu is above other content */
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.75); /* Subtle shadow for depth */
+}
+
+nav ul {
+  padding: 0;
+  margin: 0 20px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 20px;
+  opacity: .7; /* Slightly transparent */
+  transition: all 0.4s ease; /* Smooth transition for hover effect */
+}
+
+nav ul li:hover, nav ul li.active {
+  opacity: 1; /* Fully opaque on hover/active */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff; /* White text */
+  text-transform: uppercase; /* Uppercase text for style */
+  display: block;
+  font-weight: 600; /* Bold font weight */
+  letter-spacing: .2em; /* Spacing between letters */
+  font-size: 13.5px; /* Font size */
+}
+
+/* Background video styling */
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Ensure video covers the entire screen */
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1; /* Place video behind all content (background) */
+}
+
+/* Styling for the video container (YouTube) */
+.video-container {
+  text-align: center; 
+  margin-top: 40px; 
+}
+
+/* Content styling */
+.content {
+  position: relative;
+  max-width: 1200px; /* Maximum width for readability */
+  padding: 40px; /* Padding around content */
+  background: rgba(0, 0, 0, 0.85); /* Semi-transparent black background */
+  border-radius: 10px; /* Rounded corners (modern aesthetics) */
+  margin: 100px auto 0; /* Center horizontally with top margin */
+  text-align: left; /* Align text to the left */
+}
+
+/* Intro text styling */
+.intro-text {
+  font-size: 18px; /* Slightly larger font size */
+  line-height: 1.8; /* Line height (for readability) */
+  margin-bottom: 20px; /* Space between paragraphs */
+  color: #CCC; /* Light grey color (better contrast) */
+}
+
+hr {
+  border: none; /* Removes default border */
+  height: 2px; /* Sets the height of the HR line */
+  background-color: #fff; /* White color for the line */
+  margin: 20px 0; /* Adds some vertical spacing around the HR */
+}

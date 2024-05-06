@@ -1,0 +1,123 @@
+/* Hides content initially with a smooth transition for later reveal */
+.content {
+    display: none;
+    opacity: 0;
+}
+
+/* Styles for the 'START ENGINE' button */
+.start-btn {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0); /* Initially transparent background */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners (for aesthetic) */
+    cursor: pointer; /* Indicates button is clickable */
+    transition: background-color 0.3s ease; /* Color transition for interactive feedback */
+    font-weight: bold; 
+    animation: bounce 2s infinite; /* Bouncing animation for user attention */
+    margin-top: 10px; 
+    font-family: 'Lato', sans-serif; /* Font styling */
+    -webkit-font-smoothing: antialiased; /* Improves text rendering in webkit browsers (Safari, Chrome, etc.) */
+    border: 2px solid #fff; 
+}
+
+/* Hover effect for the 'START BUTTON' button for visual feedback */
+.start-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25); 
+}
+
+/* Styles for the 'x' button */
+.close-btn {
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+    cursor: pointer; /* Indicates button is clickable */
+    margin-top: 15px; 
+    margin-right: 20px;
+    font-size: 30px; /* Size of the 'x' icon */
+    color: #ffffff; /* White color */
+    font-family: 'Lato', sans-serif; 
+    -webkit-font-smoothing: antialiased; /* Improves text rendering in webkit browsers (Safari, Chrome, etc.) */
+}
+
+/* Container to center both horizontally and vertically */
+.center-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; /* Full height of the screen */
+    width: 100%; /* Full width of the screen */
+}
+
+/* Container for wordmark with centered and stacked children */
+.wordmark-container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+}
+
+/* Styles for wordmark */
+.wordmark {
+    width: 30%;
+    height: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+/* Styles for logo */
+.logo {
+    width: 10%;
+    height: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+/* Keyframes for bounce animation used on the 'START ENGINE' button */
+/* Learned from https://gist.github.com/ivo-ivanov/39f40a3ea0e973f7e280536f2d114311 */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* When the checkbox is checked, hide the 'START ENGINE' button and wordmark */
+#toggle-content:checked ~ .wordmark-container .start-btn,
+#toggle-content:checked ~ .wordmark-container .wordmark {
+    display: none;
+}
+
+/* Display the content section when checkbox is checked */
+#toggle-content:checked ~ .content {
+    display: block;
+    opacity: 1;
+    transition: opacity 2s ease; /* Smooth transition for opacity */
+}
+
+/* Ensure content is hidden when checkbox is not checked */
+#toggle-content:not(:checked) ~ .content {
+    display: none;
+    opacity: 0;
+}
+
+/* Initially hide the close 'x' button, shown only when content is visible */
+#toggle-content:not(:checked) ~ .content .close-btn {
+    display: none;
+}
+
+/* Show the close 'x' button when content is visible, positioned absolutely */
+#toggle-content:checked ~ .content .close-btn {
+    display: block;
+}
