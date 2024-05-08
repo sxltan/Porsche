@@ -15,6 +15,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <script src="main.js"></script> <!-- Main JavaScript file -->
     
     <link rel="stylesheet" type="text/css" href="main.css"> <!-- Main CSS file -->
     <link rel="stylesheet" type="text/css" href="style.css"> <!-- Additional specific CSS file for styling -->
@@ -25,7 +27,7 @@
         <source src="background.mp4" type="video/mp4">
     </video>
 
-    <audio id="background-audio" autoplay loop>
+    <audio id="background-audio" autplay loop>
         <!-- Background audio, autoplay might not work depending on browser settings -->
         <source src="background_audio.mp3" type="audio/mp3">
     </audio>
@@ -94,27 +96,6 @@
             vehicle—it's a piece of automotive history.
         </p>
     </div>
-
-    <script>
-        $(document).ready(function() {
-            var audio = $('#background-audio').get(0);
-            audio.volume = 0; // Start with the audio muted
-            audio.pause(); // Pause the audio initially
-        
-            $('#start-button').click(function() {
-                $('.wordmark-container').hide();
-                audio.volume = 0.25; // Set volume to 25% on play
-                audio.play(); // Play the audio
-                $('.content').fadeIn(5); // Smoothly fade in the content over 1000 milliseconds
-            });
-        
-            $('#close-btn').click(function() {
-                $('.content').fadeOut(1000, function() { // Smoothly fade out the content over 1000 milliseconds
-                    $('.wordmark-container').css('display', 'flex'); // Display the wordmark container again
-                });
-            });
-        });
-    </script>    
 
 </body>
 

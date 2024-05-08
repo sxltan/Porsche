@@ -15,6 +15,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    
+    <script src="page10.js"></script> <!-- Main JavaScript file -->
 
     <link rel="stylesheet" type="text/css" href="../Home/style.css" /> <!-- Link to main CSS file -->
     <link rel="stylesheet" type="text/css" href="page10.css"> <!-- Additional specific CSS file for styling -->        
@@ -109,39 +111,6 @@
         </p>
 
     </div>
-
-    <script>
-        $(document).ready(function () {
-            $('form').submit(function (event) {
-                event.preventDefault(); // Prevent the default form submission action
-                var formData = $(this).serialize(); // Serialize the form data
-
-                // Here you can implement sending the data to a server using AJAX
-                // For this example, we'll just show a message directly
-
-                // Append a response message to the container
-                $('.content').append('<div class="response-message">Thank you for contacting us!</div>');
-
-                // Optionally, clear the form fields
-                $('form input[type="text"], form textarea').val('');
-            });
-        });
-    </script>
-
-    <script>
-        function showDealerships(continent) {
-            let dealershipCount = {
-                'North America': 350,
-                'South America': 50,
-                'Europe': 600,
-                'Asia': 300,
-                'Oceania': 30,
-                'Africa': 25,
-                'Middle East': 70
-            };
-            alert('There are ' + (dealershipCount[continent] || 'an unknown number of') + ' dealerships in ' + continent + '.');
-        }
-    </script>
 
 </body>
 
