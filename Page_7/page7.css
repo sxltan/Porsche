@@ -10,6 +10,8 @@ body{
     margin: 0 auto;
     padding-bottom: 150px;
 }
+
+/* Vertical line */
 .timeline::after {
     content: '';
     position: absolute;
@@ -19,22 +21,32 @@ body{
     left: 50%;
     transform: translateX(-50%);
 }
+
+/* Timeline container */
 .container {
     padding: 10px 40px;
     position: relative;
     width: 50%;
 }
+
+/* Containers */
 .container.left, .container.right {
     transition: transform 0.5s ease;
 }
+
+/* Left container */
 .container.left {
     left: -40%;
     text-align: right;
 }
+
+/* Right container */
 .container.right {
     left: 40%;
     text-align: left;
 }
+
+/* Content inside the container */
 .content {
     padding: 20px 30px;
     background-color: #fff;
@@ -42,12 +54,18 @@ body{
     box-shadow: 0 4px 8px rgba(0, 196, 206, 1);
     color: #333;
 }
+
+/* Animation for content in left and right containers */
 .container.left .content, .container.right .content {
     transform: translateY(20px);
 }
+
+/* Hover animation for content in left and right containers */
 .container.left:hover .content, .container.right:hover .content {
     transform: translateY(-10px);
 }
+
+/* Media query for smaller screens */
 @media screen and (max-width: 768px) {
     .timeline .container {
         width: 100%;
