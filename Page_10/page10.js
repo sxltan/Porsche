@@ -18,11 +18,8 @@ $(document).ready(function () {
         if (isValid) {
             var formData = $(this).serialize(); // Serialize the form data
 
-            // Here you would typically make an AJAX request to send the form data to the server
-            // For example purposes, we'll just show a thank you message
             $('.content').append('<div class="response-message">Thank you for contacting us!</div>');
 
-            // Optionally, clear the form fields
             $('form input[type="text"], form textarea').val('');
         }
     });

@@ -1,41 +1,42 @@
+/* Styles for the Spotify container */
 .spotify-container {
     display: flex;
-    /* Use flexbox to center children */
     justify-content: center;
-    /* Center horizontally */
     align-items: center;
-    /* Center vertically, if needed */
     margin: 0 auto;
-    /* Additionally centers the container itself if it has a set width */
     width: 100%;
-    /* Take full width to center content within */
     height: auto;
-    /* Set height to auto to wrap content */
 }
 
+/* Styles for the card */
 .card {
-    margin-bottom: 20px; /* Adds space between cards */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Adds a subtle shadow for depth */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
+/* Styles for the card image */
 .card-img-top {
-    height: 200px; /* Sets a fixed height for images */
-    object-fit: cover; /* Ensures the image covers the area */
+    height: 200px;
+    object-fit: cover;
 }
 
+/* Styles for the card title */
 .card-title {
-    color: #000; /* Dark text color for titles */
+    color: #000;
 }
 
+/* Styles for the card text */
 .card-text {
-    color: #333; /* Lighter text color for descriptions */
+    color: #333;
 }
 
+/* Styles for the primary button */
 .btn-primary {
-    background-color: #000; /* Changes button color to match Porsche theme */
+    background-color: #000;
     border-color: #000;
 }
 
+/* Styles for the primary button on hover */
 .btn-primary:hover {
-    background-color: #555; /* Darker on hover */
+    background-color: #555;
 }

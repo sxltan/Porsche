@@ -1,20 +1,25 @@
+/* Styles for carousel item images */
 .carousel-item img {
-    height: 500px;  /* Set a fixed height for all images in the carousel */
-    object-fit: cover;  /* Ensure images cover the carousel area without stretching */
-    border-radius: 20px;  /* Adds rounded borders to the images */
-    padding: 10px; /* Adds space around the images */
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    padding: 10px;
 }
 
+/* Media query for smaller screens */
 @media (max-width: 768px) {
+    /* Adjust height of carousel item images */
     .carousel-item img {
-        height: auto;  /* Allows the image height to scale with the width on smaller screens */
+        height: auto;
     }
+    /* Adjust padding of carousel items */
     .carousel-item {
-        padding: 5px; /* Reduces padding on smaller screens */
+        padding: 5px;
     }
 }
 
+/* Styles for content container */
 .content.container {
-    padding-top: 15; /* Adjust padding if it's contributing to the space */
-    margin-top: 0; /* Adjust margin if necessary */
+    padding-top: 15px;
+    margin-top: 0;
 }
