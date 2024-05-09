@@ -1,18 +1,33 @@
 $(document).ready(function () {
     $('form').submit(function (event) {
         event.preventDefault(); // Prevent the default form submission action
-        var formData = $(this).serialize(); // Serialize the form data
 
-        // Here you can implement sending the data to a server using AJAX
-        // For this example, we'll just show a message directly
+        var isValid = true; // Flag to determine if the form is valid
+        $('.response-message').remove(); // Remove previous response messages
+        $('.error').remove(); // Remove previous error messages
 
-        // Append a response message to the container
-        $('.content').append('<div class="response-message">Thank you for contacting us!</div>');
+        // Check each input field that is required
+        $('input[required], textarea[required]').each(function() {
+            if ($(this).val().trim() === '') {
+                isValid = false; // Set isValid to false if the field is empty
+                $(this).after('<div class="error">This field is required</div>'); // Append an error message after the field
+            }
+        });
 
-        // Optionally, clear the form fields
-        $('form input[type="text"], form textarea').val('');
+        // Only process the form if it is valid
+        if (isValid) {
+            var formData = $(this).serialize(); // Serialize the form data
+
+            // Here you would typically make an AJAX request to send the form data to the server
+            // For example purposes, we'll just show a thank you message
+            $('.content').append('<div class="response-message">Thank you for contacting us!</div>');
+
+            // Optionally, clear the form fields
+            $('form input[type="text"], form textarea').val('');
+        }
     });
 });
+
 
 function showDealerships(continent) {
     let dealershipCount = {

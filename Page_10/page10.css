@@ -77,12 +77,24 @@ input[type=submit]:hover {
     /* Other properties here */
 }
 
+/* Error message styling */
+.error {
+    color: #FF0000; /* Red color for error messages */
+    font-size: 0.85em; /* Slightly smaller text for error messages */
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-weight: bold; /* Bold text to highlight error */
+    text-align: left; /* Align text to the left to match form field alignment */
+    display: block; /* Ensure it displays as block to avoid inline issues */
+}
+
+/* Enhance response message visibility */
 .response-message {
-    background-color: #04AA6D;
-    /* or any color you prefer */
-    color: white;
-    margin-top: 15px;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
+    background-color: #04AA6D; /* Green background for success messages */
+    color: white; /* White text for readability */
+    margin-top: 15px; /* Space above the message */
+    padding: 10px; /* Padding inside the message box */
+    border-radius: 5px; /* Rounded corners for aesthetic match with form */
+    text-align: center; /* Center text for better focus */
+    font-size: 1em; /* Ensure message text size is readable */
 }
